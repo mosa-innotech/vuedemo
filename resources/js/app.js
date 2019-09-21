@@ -5,7 +5,7 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-require('./bootstrap');
+// require('./bootstrap');
 
 window.Vue = require('vue');
 
@@ -28,6 +28,47 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-const app = new Vue({
-    el: '#app'
-});
+ // const app = new Vue({
+ //     el: '#app',
+ //     data: {
+ //         firstName: '',
+ //         lastName: ''
+ //     }
+ // });
+
+ // const eventsApp = new Vue({
+ //      el: '#events-app',
+ //      data: {
+ //
+ //      },
+ //      methods:{
+ //          buttonClicked(){
+ //              alert();
+ //          }
+ //      }
+ //  });
+
+  const vForApp = new Vue({
+       el: '#vfor-app',
+       data: {
+           songs: [
+               {"track": "Old Mac Donald", "artist": "Mosa"},
+               {"track": "Ba Ba Black Sheep", "artist": "Blaine"},
+               {"track": "Twinkle Twinkle", "artist": "Stan"}
+           ],
+           aSong: "",
+           aSongArtist: ""
+       },
+       methods:{
+           addSong(){
+               var song = {"track": this.aSong, "artist": this.aSongArtist};
+               this.songs.push(song);
+           },
+           removeSong(){
+               this.songs.pop();
+           },
+           clearList(){
+               this.songs = [];
+           }
+       }
+   });
